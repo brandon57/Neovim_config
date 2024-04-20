@@ -1,0 +1,3 @@
+require("Chungus")
+print("hello");
+
