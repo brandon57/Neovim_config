@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/playground')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use('nvim-tree/nvim-web-devicons')
 
   --LSP
   use {
@@ -49,5 +50,19 @@ return require('packer').startup(function(use)
   }
 
   use('lewis6991/gitsigns.nvim')
+
+  use {
+      'nvimdev/dashboard-nvim',
+      event = 'VimEnter',
+      config = function()
+          require('dashboard').setup {
+              -- config
+              require('dashboard-nvim')
+          }
+      end,
+      requires = {'nvim-tree/nvim-web-devicons'}
+  }
+
+  use('rcarriga/nvim-notify')
 
 end)
